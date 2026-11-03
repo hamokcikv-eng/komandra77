@@ -1,0 +1,37 @@
+{
+  "name": "komandra",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:client": "vite build",
+    "build:worker": "node scripts/build-worker.mjs",
+    "build": "npm run build:client && npm run build:worker",
+    "typecheck": "tsc --noEmit",
+    "db:local": "wrangler d1 execute komandra --local --file=./db/schema.sql",
+    "preview:worker": "wrangler dev",
+    "check": "npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "hono": "^4.13.16",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261103.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "esbuild": "^0.28.2",
+    "playwright": "^1.64.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "wrangler": "^4.157.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "workerd@1.20261103.1": true
+  }
+}

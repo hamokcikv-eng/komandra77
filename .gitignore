@@ -1,0 +1,9 @@
+node_modules
+dist
+.wrangler
+.dev.vars
+.env
+*.log
+candidates.jpg
+.browser-libs
+/freebuff-sites-build/
